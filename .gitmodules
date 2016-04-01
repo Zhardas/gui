@@ -1,0 +1,4 @@
+[submodule "engine"]
+	path = engine
+	url = git@bitbucket.org:Zhardas/headacheengine-2.0.git
+	branch = master
