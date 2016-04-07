@@ -3,7 +3,7 @@
 
 int main() {
   Game *game = Game::instance();
-  game->Initialize("Sample GUI");
+  game->Initialize("Sample GUI", 600, 400);
   game->scene_ = std::make_shared<MainScene>();
   game->renderer_->color_.r = 0;
   game->renderer_->color_.g = 0;

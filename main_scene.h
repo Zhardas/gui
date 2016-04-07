@@ -7,6 +7,7 @@
 #include <objects/common/button.h>
 #include <objects/common/textbox.h>
 #include <objects/common/checkbox.h>
+#include <objects/common/listbox.h>
 #include <list>
 #include <cmath>
 
