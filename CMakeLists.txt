@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.2)
 project(headacheGUI)
 
+add_subdirectory(${PROJECT_SOURCE_DIR}/comparison_gui)
+
 add_subdirectory(${PROJECT_SOURCE_DIR}/engine)
 include_directories("${PROJECT_SOURCE_DIR}/engine")
 
