@@ -41,17 +41,17 @@ MainScene::MainScene() {
                          Game::instance()->height() / 10 * 7);
   elements->Add(label_cb);
 
-  // Listbox
-  auto listbox = new Listbox();
+  // Combobox
+  auto listbox = new Combobox();
   listbox->set_position(Game::instance()->width() / 2 - listbox->size().width / 2, Game::instance()->height() / 10 * 6);
   auto lb_text = new Text("Arial", 24, false, false);
   lb_text->set_text("test");
-  listbox->add_item(lb_text);
-  listbox->add_item(new Checkbox());
+  listbox->AddItem(lb_text);
+  listbox->AddItem(new Checkbox());
   auto lb_texture = new TexturedQuad();
   lb_texture->set_texture("white.png");
   lb_texture->set_color(0xffaa0000);
-  listbox->add_item(lb_texture);
+  listbox->AddItem(lb_texture);
   elements->Add(listbox);
 
   // Button
@@ -60,9 +60,14 @@ MainScene::MainScene() {
   button->set_position(Game::instance()->width() / 2 - button->size().width / 2, Game::instance()->height() / 10 * 2);
   elements->Add(button);
 
+  // FPS label
+  fps_ = new Text();
+  elements->Add(fps_);
 }
 
 void MainScene::Update() {
-
+  std::stringstream ss;
+  ss << Game::instance()->frames_per_second_;
+  fps_->set_text(ss.str());
   Scene::Update();
 }

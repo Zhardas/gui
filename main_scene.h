@@ -7,13 +7,13 @@
 #include <objects/common/button.h>
 #include <objects/common/textbox.h>
 #include <objects/common/checkbox.h>
-#include <objects/common/listbox.h>
+#include <objects/common/combobox.h>
 #include <list>
 #include <cmath>
 
 class MainScene: public Scene {
  private:
-
+  Text* fps_ = nullptr;
  public:
   MainScene();
   void Update();

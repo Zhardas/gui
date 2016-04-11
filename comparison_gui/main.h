@@ -16,6 +16,20 @@ class BasicDrawPane: public wxPanel {
  private:
   std::chrono::high_resolution_clock::time_point timestamp_;
  public:
+  wxStaticText* label_;
+  wxTextCtrl* textbox_;
+  wxCheckBox* checkbox_;
+  wxComboBox* combobox_;
+  wxButton* button_;
+
+  enum {
+    LABEL_SAMPLE = wxID_HIGHEST + 1,
+    TEXTBOX_SAMPLE = wxID_HIGHEST + 2,
+    CHECKBOX_SAMPLE = wxID_HIGHEST + 3,
+    COMBOBOX_SAMPLE = wxID_HIGHEST + 4,
+    BUTTON_SAMPLE = wxID_HIGHEST + 5
+  };
+
   BasicDrawPane(wxFrame *parent);
 
   void paintEvent(wxPaintEvent &evt);
@@ -37,13 +51,14 @@ class MyApp: public wxApp {
 };
 
 class MyFrame: public wxFrame {
- public:
-  MyFrame() : wxFrame((wxFrame *) NULL, -1, wxT("Comparison GUI"), wxPoint(50, 50), wxSize(400, 200)) {
-
-  }
  private:
   void OnExit(wxCommandEvent &event);
   void OnAbout(wxCommandEvent &event);
   void OnClose(wxCloseEvent &event);
+ public:
+
+  MyFrame() : wxFrame((wxFrame *) NULL, -1, wxT("Comparison GUI"), wxPoint(50, 50), wxSize(606, 428)) {
+  }
+
  DECLARE_EVENT_TABLE();
 };
