@@ -2,20 +2,20 @@
 #include "./main_scene.h"
 
 int main() {
-  Game *game = Game::instance();
-  game->Initialize("Sample GUI", 600, 400);
-  game->scene_ = std::make_shared<MainScene>();
-  game->renderer_->color_.r = 0;
-  game->renderer_->color_.g = 0;
-  game->renderer_->color_.b = 0;
+  Game *engine = Game::instance();
+  engine->Initialize("Sample GUI", 600, 400);
+  engine->scene_ = std::make_shared<MainScene>();
+  engine->renderer_->color_.r = 0;
+  engine->renderer_->color_.g = 0;
+  engine->renderer_->color_.b = 0;
 
   MSG message;
-  while (game->running()) {
-    if (PeekMessage(&message, game->window_handle(), 0, 0, PM_REMOVE)) {
+  while (engine->running()) {
+    if (PeekMessage(&message, engine->window_handle(), 0, 0, PM_REMOVE)) {
       TranslateMessage(&message);
       DispatchMessage(&message);
     }
-    game->Loop();
+    engine->Loop();
   }
 
   return 0;

@@ -59,11 +59,11 @@ void MyApp::OnIdle(wxIdleEvent &evt) {
 }
 BasicDrawPane::BasicDrawPane(wxFrame *parent) :
     wxPanel(parent) {
-  label_ = new wxStaticText(this, LABEL_SAMPLE, _T("Sample label!"), wxPoint(300, 20));
-  textbox_ = new wxTextCtrl(this, TEXTBOX_SAMPLE, _T("Sample text"), wxPoint(300, 70));
-  checkbox_ = new wxCheckBox(this, CHECKBOX_SAMPLE, _T("<- Sample checkbox!"), wxPoint(300, 120));
-  combobox_ = new wxComboBox(this, COMBOBOX_SAMPLE, _T("Empty"), wxPoint(300, 170));
-  button_ = new wxButton(this, BUTTON_SAMPLE, _T("Sample button!"), wxPoint(300, 220), wxDefaultSize, 0);
+  label_ = new wxStaticText(this, LABEL_SAMPLE, _T("Sample label!"), wxPoint(10, 20));
+  textbox_ = new wxTextCtrl(this, TEXTBOX_SAMPLE, _T("Sample text"), wxPoint(10, 50));
+  checkbox_ = new wxCheckBox(this, CHECKBOX_SAMPLE, _T("<- Sample checkbox!"), wxPoint(10, 100));
+  combobox_ = new wxComboBox(this, COMBOBOX_SAMPLE, _T("Empty"), wxPoint(10, 150));
+  button_ = new wxButton(this, BUTTON_SAMPLE, _T("Sample button!"), wxPoint(10, 200), wxDefaultSize, 0);
 }
 
 void BasicDrawPane::paintEvent(wxPaintEvent &evt) {
